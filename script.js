@@ -35,3 +35,8 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12 });
 
 document.querySelectorAll('.reveal').forEach((element) => observer.observe(element));
+
+// Keep deep links visible immediately when a visitor opens a specific section.
+if (window.location.hash) {
+  document.querySelectorAll('.reveal').forEach((element) => element.classList.add('is-visible'));
+}
